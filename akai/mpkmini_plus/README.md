@@ -3,26 +3,40 @@
 - Author: Tsukasa "FlyingHog" Koizumi
 - Created: 2024-05-26
 
-## Installing
+## ** NOTICE ** for your LANGUAGE and OS (Windows or MacOS)
+This script will work if MIDI port names match. MIDI port names differ based on language and OS type. So, you MUST check MIDI port names in Cubase’s “MIDI Port Setup”.
 
-1. Download source package as folder name "Akai".
-2. Folder "Akai", put into Steinberg/Cubase/MIDI Remote/Driver Scripts/Local/ of user's "Documents" folder.
+### For MacOS and Japanese
+I have checked.
+
+### For MacOS and other languages, or Windows
+It will not work. See MIDI port names in Cubase’s “MIDI Port Setup” (in Studio Setup). Then, rewrite MIDI Port names in the code under the “1. DRIVER SETUP” section.
+
+```
+deviceDriver.makeDetectionUnit().detectPortPair(midiInput, midiOutput)
+    .expectInputNameEquals('MPK mini Plus Port 1')
+    .expectOutputNameEquals('MPK mini Plus Port 1')
+```
+
+## Installing
+1. Download the source package.
+2. Place the “Akai” folder into "Steinberg/Cubase/MIDI Remote/Driver Scripts/Local/" in the user’s “Documents” folder.
 
 ## Bindings
-
 - Knob 1 - 8
-  - Quick control 1 - 8 of selected track.
-  - NOTICE: You need to edit configuration of MPK knobs, set "mode" to RELATIVE.
-- "<<" and ">>" buttons
-  - Selecting track previous and next.
-- "STOP", "PLAY" and "REC" buttons
-  - Transport stop, start and record.
+  - Quick control 1 - 8 of the selected track.
+  - NOTICE: You need to edit the configuration of MPK knobs, setting the “mode” to RELATIVE.
+- ”<<” and “>>” buttons
+  - Select previous and next track.
+- “STOP”, “PLAY”, and “REC” buttons
+  - Transport stop, start, and record.
+
 
 ## Optional
-You can customize or adding control binding using Cubase "Mapping Assistant".
+You can customize or add control bindings using Cubase’s “Mapping Assistant”.
 
 - Knob 1 - 8
-  - These are binding to MIDI CC 70 - 77.
+  - These are bound to MIDI CC 70 - 77.
 - Buttons
   - "<<" ... CC 115
   - ">>" ... CC 116
@@ -31,8 +45,8 @@ You can customize or adding control binding using Cubase "Mapping Assistant".
   - REC ... CC 119
   
 - PAD 1 - 8
-  - You configure PADs are CC 16 - 23, then you can customize PADs as controller using "Mapping Assistant".
+  - Configure PADs as CC 16 - 23, then customize PADs as controllers using the “Mapping Assistant”.
 - Joystick X, Y, Pitch bend and Mod-wheel
-  - Also, customizable using "Mapping Assistant".
-  - Joystick X binded as CC 12
-  - Joystick Y binded as CC 2
+  - Also customizable using the “Mapping Assistant”.
+  - Joystick X bound as CC 12
+  - Joystick Y bound as CC 2
