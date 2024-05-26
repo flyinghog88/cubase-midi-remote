@@ -1,3 +1,3 @@
-# Cubase 13 MIDI Remote Scripts by Tsukasa "FlyingHog" Koizumi
+# Cubase 13 MIDI Remote Scripts
 ## Avairable Scripts
 - AKAI PROFESSIONAL  MPK mini Plus ... Akai/mpkmini_plus
