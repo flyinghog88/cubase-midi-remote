@@ -6,7 +6,7 @@
 ## ** NOTICE ** for your LANGUAGE and OS (Windows or MacOS)
 This script will work if MIDI port names match. MIDI port names differ based on language and OS type. So, you MUST check MIDI port names in Cubase’s “MIDI Port Setup”.
 
-### For MacOS and Japanese
+### For MacOS and Japanese or English
 I have checked.
 
 ### For MacOS and other languages, or Windows

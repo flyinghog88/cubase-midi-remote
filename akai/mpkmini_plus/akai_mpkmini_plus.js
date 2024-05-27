@@ -17,7 +17,7 @@ var midiOutput = deviceDriver.mPorts.makeMidiOutput()
 deviceDriver.makeDetectionUnit().detectPortPair(midiInput, midiOutput)
     .expectInputNameEquals('MPK mini Plus ポート1')
     .expectOutputNameEquals('MPK mini Plus ポート1')
-// For MacOS English: *Not tested.
+// For MacOS English:
 deviceDriver.makeDetectionUnit().detectPortPair(midiInput, midiOutput)
     .expectInputNameEquals('MPK mini Plus Port 1')
     .expectOutputNameEquals('MPK mini Plus Port 1')
