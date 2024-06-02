@@ -1,22 +1,7 @@
-# AKAI PROFESSIONAL MPK mini Plus - Cubase 13 MIDI Remote Script
-- Version: 1.0.0
+# Cubase 13 MIDI Remote Script for AKAI PROFESSIONAL MPK mini Plus
+- Version: 1.0.2
 - Author: Tsukasa "FlyingHog" Koizumi
 - Created: 2024-05-26
-
-## ** NOTICE ** for your LANGUAGE and OS (Windows or MacOS)
-This script will work if MIDI port names match. MIDI port names differ based on language and OS type. So, you MUST check MIDI port names in Cubase’s “MIDI Port Setup”.
-
-### For MacOS and Japanese or English
-I have checked.
-
-### For MacOS and other languages, or Windows
-It will not work. See MIDI port names in Cubase’s “MIDI Port Setup” (in Studio Setup). Then, rewrite MIDI Port names in the code under the “1. DRIVER SETUP” section.
-
-```
-deviceDriver.makeDetectionUnit().detectPortPair(midiInput, midiOutput)
-    .expectInputNameEquals('MPK mini Plus Port 1')
-    .expectOutputNameEquals('MPK mini Plus Port 1')
-```
 
 ## Installing
 1. Download the source package.
@@ -30,7 +15,6 @@ deviceDriver.makeDetectionUnit().detectPortPair(midiInput, midiOutput)
   - Select previous and next track.
 - “STOP”, “PLAY”, and “REC” buttons
   - Transport stop, start, and record.
-
 
 ## Optional
 You can customize or add control bindings using Cubase’s “Mapping Assistant”.

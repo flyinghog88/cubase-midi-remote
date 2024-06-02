@@ -12,19 +12,12 @@ var deviceDriver = midiremote_api.makeDeviceDriver('Akai', 'MPK mini Plus', 'Tsu
 var midiInput = deviceDriver.mPorts.makeMidiInput()
 var midiOutput = deviceDriver.mPorts.makeMidiOutput()
 
-// define all possible namings the devices MIDI ports could have
-// For MacOS Japanese:
+// SySEx-ID-Response determined
+// F0 7E 7F 06 02 *47* *54 00* *19 00* 01 01 03 00 00 00 00 00 45 38 32 33 30 38 32 35 38 30 35 38 32 39 30 00 F7
+
+// Detection for macOS and Windows
 deviceDriver.makeDetectionUnit().detectPortPair(midiInput, midiOutput)
-    .expectInputNameEquals('MPK mini Plus ポート1')
-    .expectOutputNameEquals('MPK mini Plus ポート1')
-// For MacOS English:
-deviceDriver.makeDetectionUnit().detectPortPair(midiInput, midiOutput)
-    .expectInputNameEquals('MPK mini Plus Port 1')
-    .expectOutputNameEquals('MPK mini Plus Port 1')
-// For Windows:
-// deviceDriver.makeDetectionUnit().detectPortPair(midiInput, midiOutput)
-//     .expectInputNameEquals('MPK mini Plus Port 1')
-//     .expectOutputNameEquals('MPK mini Plus Port 1')
+    .expectSysexIdentityResponse('47', '5400', '1900')
 
 //-----------------------------------------------------------------------------
 // 2. SURFACE LAYOUT - create control elements and midi bindings
